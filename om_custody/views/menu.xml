@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_custody_root"
+              name="Custody"
+              web_icon="om_custody,static/description/icon.png"
+              sequence="0"/>
+
+    <menuitem id="menu_custody"
+              name="Custody Request"
+              parent="menu_custody_root"
+              sequence="0"/>
+
+    <menuitem id="menu_property"
+              name="Property"
+              parent="menu_custody_root"
+              sequence="0"/>
+
+</odoo>

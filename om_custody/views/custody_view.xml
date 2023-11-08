@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_custody_tree" model="ir.ui.view">
+        <field name="name">custody.tree</field>
+        <field name="model">custody</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref"/>
+                <field name="name"/>
+                <field name="reason"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_custody_form" model="ir.ui.view">
+        <field name="name">custody.form</field>
+        <field name="model">custody</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="reason"/>
+                            <field name="note"/>
+                        </group>
+                        <group>
+                            <field name="rqdate"/>
+                            <field name="rtdate"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_custody" model="ir.actions.act_window">
+        <field name="name">Custody</field>
+        <field name="res_model">custody</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your Custody !
+            </p>
+        </field>
+    </record>
+
+</odoo>
