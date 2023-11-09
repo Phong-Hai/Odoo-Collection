@@ -9,6 +9,8 @@
                 <field name="ref"/>
                 <field name="name"/>
                 <field name="reason"/>
+                <field name="rqdate"/>
+                <field name="rtdate"/>
             </tree>
         </field>
     </record>

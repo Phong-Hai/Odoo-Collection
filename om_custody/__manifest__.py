@@ -11,6 +11,8 @@
         'security/ir.model.access.csv',
         'views/menu.xml',
         'views/custody_view.xml',
+        'views/property_view.xml',
+        'views/product_view.xml',
     ],
     'demo':[],
     'application': True,
