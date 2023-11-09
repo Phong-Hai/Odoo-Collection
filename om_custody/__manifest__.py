@@ -1,6 +1,6 @@
 {
     'name': 'Custody',
-    'author': 'Nanomie (Hai)',
+    'author': 'Hai',
     'version': '1.0.0',
     'cetegory': 'Custody',
     'sequence': -100,
