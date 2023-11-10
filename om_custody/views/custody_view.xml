@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-        <record id="view_custody_tree" model="ir.ui.view">
+    <record id="view_custody_tree" model="ir.ui.view">
         <field name="name">custody.tree</field>
         <field name="model">custody</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="ref"/>
-                <field name="name"/>
+                <field name="code"/>
+                <field name="employee_id"/>
                 <field name="reason"/>
+                <field name="source"/>
                 <field name="rqdate"/>
                 <field name="rtdate"/>
             </tree>
@@ -23,8 +24,11 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="employee_id"/>
+                            <field name="source"/>
                             <field name="reason"/>
+                            <field name="project_id"/>
                             <field name="note"/>
                         </group>
                         <group>
