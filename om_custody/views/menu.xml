@@ -24,12 +24,12 @@
             sequence="20"
     />
 
-<!--    <menuitem-->
-<!--            id="action_product_master"-->
-<!--            name="Product"-->
-<!--            action="action_product"-->
-<!--            parent="menu_custody_root"-->
-<!--            sequence="30"-->
-<!--    />-->
+    <menuitem
+            id="action_custody_product_master"
+            name="Product"
+            action="action_custody_product"
+            parent="menu_custody_root"
+            sequence="30"
+    />
 
 </odoo>

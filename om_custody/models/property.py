@@ -8,7 +8,7 @@ class Property(models.Model):
     image = fields.Image(string='Image')
 
     ssi = fields.Image(string='Small-size Image')
-    description = fields.Text(string='Description')
+    description = fields.Html(string='Description')
     company = fields.Text(string='Company')
     product = fields.Text(string='Product')
     quan = fields.Char(string='Quantity')

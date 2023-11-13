@@ -22,9 +22,12 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <header>
+                        <field name="state" widget="statusbar" options="{'clickable': '1'}" />
+                    </header>
                     <group>
                         <group>
-                            <field name="code"/>
+
                             <field name="employee_id"/>
                             <field name="source"/>
                             <field name="reason"/>
@@ -37,12 +40,38 @@
                             <field name="active" invisible="1"/>
                         </group>
                     </group>
+
+                    <notebook>
+                        <page string="Properties" name="properties">
+                        </page>
+                        <page string="Setting" name="setting">
+                            <group>
+                                <field name="approve_user_id"/>
+                                <field name="it_picking_type_id"/>
+                                <field name="it_location_id"/>
+                                <field name="stock_picking_type_id"/>
+                                <field name="stock_location_id"/>
+                                <field name="destination_location_id"/>
+                            </group>
+                        </page>
+                        <page string="History" name="history">
+                        </page>
+                    </notebook>
+
                 </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </div>
+
             </form>
         </field>
     </record>
 
-    <record id="action_custody" model="ir.actions.act_window">
+
+<record id="action_custody" model="ir.actions.act_window">
         <field name="name">Custody</field>
         <field name="res_model">custody</field>
         <field name="view_mode">tree,form</field>
