@@ -11,34 +11,6 @@
              <field name="name" position="after">
                 <field name="custody_product_id" class="oe_inline" readonly="1" invisible="1" attrs="{'required': [('id', '!=', False)]}"/>
             </field>
-<!--            <form>-->
-<!--                <sheet>-->
-<!--                    <group>-->
-<!--                        <group>-->
-<!--                            <field name="custody_id"/>-->
-<!--                            <field name="image"/>-->
-<!--                            <field name="ssi"/>-->
-<!--                            <field name="description"/>-->
-<!--                            <field name="company"/>-->
-<!--                            <field name="product_id"/>-->
-<!--                            <field name="lsnum_id"/>-->
-<!--                            <field name="quan"/>-->
-<!--                            <field name="delivered"/>-->
-<!--                            <field name="uom_id"/>-->
-<!--                        </group>-->
-<!--                        <group>-->
-<!--                            <field name="ppn"/>-->
-<!--                            <field name="msi"/>-->
-<!--                            <field name="ppf"/>-->
-<!--                            <field name="sno"/>-->
-<!--                            <field name="source"/>-->
-<!--                            <field name="returned"/>-->
-<!--                            <field name="aqty"/>-->
-<!--                            <field name="job_id"/>-->
-<!--                        </group>-->
-<!--                    </group>-->
-<!--                </sheet>-->
-<!--            </form>-->
         </field>
     </record>
 
