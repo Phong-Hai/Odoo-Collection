@@ -6,12 +6,18 @@
         <field name="model">custody</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="code"/>
-                <field name="employee_id"/>
-                <field name="reason"/>
-                <field name="source"/>
-                <field name="rqdate"/>
-                <field name="rtdate"/>
+                <field name="ref" decoration-bf="1"/>
+                <field name="employee_id" decoration-bf="1"/>
+                <field name="reason" decoration-bf="1"/>
+                <field name="source" decoration-bf="1"/>
+                <field name="rqdate" decoration-bf="1"/>
+                <field name="rtdate" decoration-bf="1"/>
+                <field name="state"
+                       decoration-success="state == 'done'"
+                       decoration-danger="state == 'returned'"
+                       decoration-info="state == 'draft'"
+                       decoration-muted="state == 'to_approved'"
+                       widget="badge"/>
             </tree>
         </field>
     </record>
@@ -21,13 +27,17 @@
         <field name="model">custody</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}" />
+                </header>
                 <sheet>
-                    <header>
-                        <field name="state" widget="statusbar" options="{'clickable': '1'}" />
-                    </header>
+                    <div class="oe_tittle">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
                     <group>
                         <group>
-
                             <field name="employee_id"/>
                             <field name="source"/>
                             <field name="reason"/>
@@ -71,7 +81,7 @@
     </record>
 
 
-<record id="action_custody" model="ir.actions.act_window">
+    <record id="action_custody" model="ir.actions.act_window">
         <field name="name">Custody</field>
         <field name="res_model">custody</field>
         <field name="view_mode">tree,form</field>

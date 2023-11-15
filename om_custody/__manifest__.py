@@ -6,9 +6,10 @@
     'sequence': -100,
     'summary':  'Custody',
     'description': """This module is combination of 3 apps together""",
-    'depends': ['hr','project','product','mail'],
+    'depends': ['hr','project','product','mail','sale'],
     'data': [
         'security/ir.model.access.csv',
+        'data/data.xml',
         'views/custody_view.xml',
         'views/property_view.xml',
         'views/custody_product.xml',

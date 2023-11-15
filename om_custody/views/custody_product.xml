@@ -11,6 +11,7 @@
              <field name="name" position="after">
                 <field name="custody_product_id" class="oe_inline" readonly="1" invisible="1" attrs="{'required': [('id', '!=', False)]}"/>
             </field>
+
         </field>
     </record>
 
