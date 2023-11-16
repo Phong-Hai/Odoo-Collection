@@ -13,7 +13,7 @@ class Custody(models.Model):
     note = fields.Text(string='Note')
     source = fields.Selection([('it', 'IT'), ('stock', 'Inventory')], string='Source')
 
-    state = fields.Selection(
+    status = fields.Selection(
         [('draft', 'Draft'), ('to_approve', 'Waiting Stock Validate'), ('done', 'Done'), ('returned', 'Returned')],
         string='Status', default='draft')
     product_id = fields.Many2one('product.product', string='Product')
