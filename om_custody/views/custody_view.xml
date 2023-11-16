@@ -53,6 +53,28 @@
 
                     <notebook>
                         <page string="Properties" name="properties">
+                            <field name="properties_one2many_ids">
+                                <tree editable="button">
+                                    <field name="product_id"/>
+                                    <field name="source"/>
+                                    <field name="property_name"/>
+                                    <field name="available_qty"/>
+                                    <field name="quantity"/>
+                                    <field name="delivered"/>
+                                    <field name="returned"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="product_id"/>
+                                        <field name="source"/>
+                                        <field name="property_name"/>
+                                        <field name="available_qty"/>
+                                        <field name="quantity"/>
+                                        <field name="delivered"/>
+                                        <field name="returned"/>
+                                    </group>
+                                </form>
+                            </field>
                         </page>
                         <page string="Setting" name="setting">
                             <group>
@@ -65,6 +87,20 @@
                             </group>
                         </page>
                         <page string="History" name="history">
+                            <field name="history_one2many_ids">
+                                <tree editable="button">
+                                    <field name="employee_id"/>
+                                    <field name="date"/>
+                                    <field name="state"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="employee_id"/>
+                                        <field name="date"/>
+                                        <field name="state"/>
+                                    </group>
+                                </form>
+                            </field>
                         </page>
                     </notebook>
 

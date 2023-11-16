@@ -18,7 +18,7 @@ class Property(models.Model):
     msi = fields.Char(string='Medium-sized Image')
     ppf = fields.Char(string='Property Form')
     sno = fields.Char(string='Serial No')
-    source = fields.Char(string='Source')
+    source = fields.Selection([('it', 'IT'), ('stock', 'Inventory')], string='Source')
     returned = fields.Char(string='Returned')
     aqty = fields.Char(string='Available QTY')
     delivered = fields.Integer(string='Delivered')
