@@ -30,7 +30,7 @@
                 <header>
                     <field name="status" widget="statusbar" options="{'clickable': '1'}" />
                 </header>
-                <sheet>
+                <sheet style="background-color: #FFF8DC; padding: 20px; font-weight: bold">
                     <div class="oe_tittle">
                         <h1>
                             <field name="ref" readonly="1"/>
@@ -55,9 +55,8 @@
                         <page string="Properties" name="properties">
                             <field name="properties_one2many_ids">
                                 <tree editable="button">
-                                    <field name="product_id"/>
+                                    <field name="product_id" class="oe_form" size="small"/>
                                     <field name="source"/>
-                                    <field name="property_name"/>
                                     <field name="available_qty"/>
                                     <field name="quantity"/>
                                     <field name="delivered"/>
@@ -67,7 +66,6 @@
                                     <group>
                                         <field name="product_id"/>
                                         <field name="source"/>
-                                        <field name="property_name"/>
                                         <field name="available_qty"/>
                                         <field name="quantity"/>
                                         <field name="delivered"/>

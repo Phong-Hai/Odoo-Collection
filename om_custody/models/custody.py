@@ -44,7 +44,6 @@ class CustodyOne2ManyProperties(models.Model):
 
     product_id = fields.Many2one('product.product')
     source = fields.Selection([('it', 'IT'), ('stock', 'Inventory')], string='Source')
-    property_name = fields.Char(string='Property Name')
     available_qty = fields.Integer(string='Available QTY')
     quantity = fields.Integer(string='Quantity')
     delivered = fields.Integer(string='Delivered')

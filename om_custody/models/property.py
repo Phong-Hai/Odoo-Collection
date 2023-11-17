@@ -1,8 +1,9 @@
 from odoo import api, fields, models
 
+
 class Property(models.Model):
     _name = "property"
-    _description = ("Property")
+    _description = "Property"
 
     custody = fields.Char(string='Custody')
     image = fields.Image(string='Image')

@@ -1,12 +1,13 @@
 {
     'name': 'Custody',
-    'author': 'Hai',
+    'author': 'ERP CAMBODIA',
     'version': '1.0.0',
     'cetegory': 'Custody',
     'sequence': -100,
     'summary':  'Custody',
+    'website': 'https://www.erpcambodia.biz/',
     'description': """This module is combination of 3 apps together""",
-    'depends': ['hr','project','product','mail','sale'],
+    'depends': ['hr','project','product','mail','sale','stock'],
     'data': [
         'security/ir.model.access.csv',
         'data/data.xml',

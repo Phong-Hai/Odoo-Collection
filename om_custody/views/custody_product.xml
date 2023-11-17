@@ -11,7 +11,19 @@
              <field name="name" position="after">
                 <field name="custody_product_id" class="oe_inline" readonly="1" invisible="1" attrs="{'required': [('id', '!=', False)]}"/>
             </field>
+        </field>
+    </record>
 
+    <record id="view_custody_product_tree" model="ir.ui.view">
+        <field name="name">custody.product.tree</field>
+        <field name="model">custody.product</field>
+         <field name="mode">primary</field>
+         <field eval="7" name="priority"/>
+         <field name="inherit_id" ref="product.product_template_tree_view"/>
+         <field name="arch" type="xml">
+             <field name="name" position="after">
+                <field name="custody_product_search_id" class="oe_inline" readonly="1" invisible="1" attrs="{'required': [('id', '!=', False)]}"/>
+            </field>
         </field>
     </record>
 
@@ -21,7 +33,6 @@
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create your Product !
             </p>
         </field>
     </record>
