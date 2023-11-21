@@ -1,6 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access.custody,access_custody,om_custody.model_custody,base.group_user,1,1,1,1
-access.property,access_property,om_custody.model_property,base.group_user,1,1,1,1
-access.custody.product,access_custody_product,om_custody.model_custody_product,base.group_user,1,1,1,1
-access.custody.one2many.properties,access_custody_one2many_properties,om_custody.model_custody_one2many_properties,base.group_user,1,1,1,1
-access.custody.one2many.history,access_custody_one2many_history,om_custody.model_custody_one2many_history,base.group_user,1,1,1,1
