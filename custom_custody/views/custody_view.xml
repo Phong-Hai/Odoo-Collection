@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_custody_tree" model="ir.ui.view">
+        <field name="name">custody.tree</field>
+        <field name="model">custody</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ref" decoration-bf="1"/>
+                <field name="employee_id" decoration-bf="1"/>
+                <field name="reason" decoration-bf="1"/>
+                <field name="source" decoration-bf="1"/>
+                <field name="rqdate" decoration-bf="1"/>
+                <field name="rtdate" decoration-bf="1"/>
+                <field name="status"
+                       decoration-success="status == 'done'"
+                       decoration-primary="status == 'returned'"
+                       decoration-info="status == 'draft'"
+                       decoration-muted="status == 'to_approved'"
+                       decoration-danger="status == 'rejected'"
+                       widget="badge"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_custody_form" model="ir.ui.view">
+        <field name="name">custody.form</field>
+        <field name="model">custody</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="status" widget="statusbar"/>
+                    <field name="is_approved" invisible="1"/>
+                    <field name="is_rejected" invisible="1"/>
+                    <button name="action_approve" string="Approve" type="object" class="oe_highlight"
+                            attrs="{'invisible': ['|', ('is_approved', '=', False), ('status', 'in', ('done', 'rejected', 'returned'))]}"/>
+                    <button name="action_reject" string="Reject" type="object" class="oe_highlight"
+                            attrs="{'invisible': ['|', ('is_rejected', '=', False), ('status', 'in', ('done', 'rejected', 'returned'))]}"/>
+                </header>
+                <sheet>
+                    <div class="oe_tittle">
+                        <h1>
+                            <field name="ref" readonly="1"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="source"/>
+                            <field name="reason"/>
+                            <field name="project_id"/>
+                            <field name="note"/>
+                        </group>
+                        <group>
+                            <field name="rqdate"/>
+                            <field name="rtdate"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <page string="Properties" name="properties">
+                            <field name="properties_one2many_ids">
+                                <tree editable="button">
+                                    <field name="product_id" class="oe_form" size="small"/>
+                                    <field name="source"/>
+                                    <field name="available_qty"/>
+                                    <field name="quantity"/>
+                                    <field name="delivered"/>
+                                    <field name="returned"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="product_id"/>
+                                        <field name="source"/>
+                                        <field name="available_qty"/>
+                                        <field name="quantity"/>
+                                        <field name="delivered"/>
+                                        <field name="returned"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Approval" name="approval">
+                            <group>
+                                <field name="approve_user_id"/>
+                                <field name="it_picking_type_id"/>
+                                <field name="it_location_id"/>
+                                <field name="stock_picking_type_id"/>
+                                <field name="stock_location_id"/>
+                                <field name="destination_location_id"/>
+                            </group>
+                        </page>
+                        <page string="History" name="history">
+                            <field name="history_one2many_ids">
+                                <tree editable="button">
+                                    <field name="employee_id"/>
+                                    <field name="date"/>
+                                    <field name="state"/>
+                                </tree>
+                                <form>
+                                    <group>
+                                        <field name="employee_id"/>
+                                        <field name="date"/>
+                                        <field name="state"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+
+                </sheet>
+
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                    <field name="activity_ids"/>
+                </div>
+
+            </form>
+        </field>
+    </record>
+
+    <record id="view_custody_search" model="ir.ui.view">
+        <field name="name">custody.search</field>
+        <field name="model">custody</field>
+        <field name="arch" type="xml">
+            <search>
+                <group expand="0" string="Group By">
+                    <filter string="Status" name="group_by_status" context="{'group_by': 'status'}"/>
+                    <filter string="Employee" name="group_by_employee" context="{'group_by': 'employee_id'}"/>
+                    <filter string="Source" name="group_by_source" context="{'group_by': 'source'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_custody" model="ir.actions.act_window">
+        <field name="name">Custody</field>
+        <field name="res_model">custody</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your Custody !
+            </p>
+        </field>
+    </record>
+
+</odoo>
