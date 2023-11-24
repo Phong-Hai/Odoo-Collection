@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+            id="menu_custody_root"
+            name="Custody"
+            web_icon="custom_custody,static/description/icon.png"
+            sequence="0"
+    />
+
+    <menuitem
+            id="menu_custody_master"
+            name="Custody Request"
+            action="action_custody"
+            parent="menu_custody_root"
+            sequence="10"
+    />
+
+    <menuitem
+            id="action_property_master"
+            name="Property"
+            action="action_property"
+            parent="menu_custody_root"
+            sequence="20"
+    />
+
+    <menuitem
+            id="action_custody_product_master"
+            name="Product"
+            action="action_custody_product"
+            parent="menu_custody_root"
+            sequence="30"
+    />
+
+</odoo>
